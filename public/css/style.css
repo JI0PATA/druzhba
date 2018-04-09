@@ -1,0 +1,453 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+:root {
+	--blue: #305ccc;
+	--blue-darken: #304c99;
+	--blue-lighting: #3464e9;
+}
+
+/************* ОБЩИЕ СТИЛИ *************/
+.wp {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.hor-center {
+	text-align: center;
+}
+
+.hor-right {
+	text-align: right;
+}
+
+.hor-left {
+	text-align: left;
+}
+
+.title {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #000;
+	font-weight: normal;
+	text-align: center;
+}
+
+.underline {
+	display: inline-block;
+	position: relative;
+}
+
+.underline:after {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 2px;
+	background: var(--blue);
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	transform: translateX(-50%);
+}
+
+section {
+	padding: 40px;
+}
+
+.line-bottom {
+	border-bottom: 2px solid var(--blue);
+}
+
+.min-height-auto > * {
+	min-height: auto !important;
+}
+
+::-webkit-scrollbar-button {
+	width: 5px;
+	height: 0;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	background-color: var(--blue);
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/************* /ОБЩИЕ СТИЛИ ************/
+/************* КНОПКИ *************/
+.btn {
+	font-size: 20px;
+	color: #fff;
+	background: var(--blue);
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	transition: background .4s;
+}
+
+.btn:hover {
+	background: var(--blue-darken);
+}
+
+/************* /КНОПКИ ************/
+
+/************* ШАПКА *************/
+#header {
+	width: 100%;
+	height: 600px;
+	position: relative;
+}
+
+.header__item {
+	position: relative;
+	z-index: 2;
+}
+
+#hat {
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #fff;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+}
+
+#hat__items {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#hat a {
+	transition: color .4s;
+}
+
+#hat a:hover {
+	color: var(--blue);
+}
+
+.hat__item > img {
+	height: 60px;
+	margin-right: 20px;
+}
+
+.hat__sub-item {
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.hat__sub-item > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hat__sub-item_img {
+	width: 20px;
+	margin-right: 10px;
+}
+
+.full-line {
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+
+.hat__main-title {
+	margin-top: 30px;
+	color: #fff;
+}
+
+.hat__main-title_title {
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.hat__main-title_description {
+	font-weight: normal;
+	text-align: center;
+	font-size: 17px;
+	margin-top: 80px;
+	line-height: 1.5;
+}
+
+/************* СЛАЙДЕР *************/
+#slider {
+	width: 100%;
+	height: 100%;
+}
+
+.slick-track, .slick-list {
+	height: 100%;
+}
+
+.slider__item {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: flex !important;
+	align-items: center;
+	position: relative;
+}
+
+.slider__item:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .6);
+	z-index: 3;
+}
+
+.hat__main-title {
+	position: relative;
+	z-index: 4;
+}
+
+.slick-dots {
+	bottom: 10px !important;
+}
+
+.slick-dots li button:before {
+	color: #fff !important;
+}
+
+.slick-dots li button {
+	background: var(--blue) !important;
+	border-radius: 50px !important;
+}
+
+/************* /СЛАЙДЕР ************/
+
+/************* /ШАПКА ************/
+
+/************* МЕНЮ *************/
+#menu {
+	background: var(--blue);
+	padding: 20px;
+}
+
+menu {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	color: #fff;
+	font-size: 18px;
+}
+
+.menu__item {
+	transition: color .4s;
+}
+
+.menu__item:hover {
+	color: #ccc;
+}
+
+/************* /МЕНЮ ************/
+
+/************* СПИСОК *************/
+.list__items_hor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.list__item, .list__item_text {
+	width: 20%;
+	min-height: 300px;
+	box-shadow: 4px 5px 10px 4px var(--blue-lighting);
+	border-radius: 5px;
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.list__item-img {
+	height: 220px;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.list__item-title {
+	text-transform: uppercase;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.list__item-description {
+	text-align: center;
+	font-size: 17px;
+	margin-top: 5px;
+}
+
+.list__item-name {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.list__item_title-hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	color: #fff;
+	font-size: 23px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 5px;
+	transform: scale(0);
+	transition: transform .4s;
+}
+
+.list__item:hover .list__item_title-hidden {
+	transform: scale(1);
+}
+
+.list__item_title-hidden span {
+	display: inline-block;
+}
+
+.more {
+	color: var(--blue);
+	display: inline-block;
+	margin-top: 30px;
+	transition: .4s;
+}
+
+.more:hover {
+	color: var(--blue-darken);
+}
+
+/************* /СПИСОК ************/
+
+/************* СПИСОК ИЗ ТЕКСТОВЫХ ЭЛЕМЕНТОВ *************/
+.list__items_text {
+	margin-top: 30px;
+}
+
+.list__item_text {
+	width: 100%;
+	height: 300px;
+	display: flex;
+	overflow: hidden;
+	line-height: 1.5;
+	margin-top: 50px;
+}
+
+.list__item_text_img {
+	width: 30%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	flex-shrink: 0;
+	margin-right: 50px;
+}
+
+.list__item_text-title {
+	font-size: 24px;
+}
+
+.list__item_text_user > * {
+	font-size: 20px;
+}
+
+.list__item_text_user .list__item_text-title, .list__item_text_user .list__item_text-date {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/************* /СПИСОК ИЗ ТЕКСТОВЫХ ЭЛЕМЕНТОВ ************/
+
+/************* ФОРМЫ *************/
+.form {
+	width: 400px;
+	text-align: center;
+}
+
+.form__title {
+	font-size: 27px;
+	margin-bottom: 15px;
+}
+
+.form__field {
+	width: 100%;
+	display: block;
+}
+
+.form__input {
+	border: 1px solid var(--blue);
+	font-size: 20px;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.form__textarea {
+	height: 200px;
+}
+
+.form__input:disabled {
+	background: none;
+}
+
+/************* /ФОРМЫ ************/
+
+/************* НАПИСАТЬ ОТЗЫВ *************/
+.callback__forms {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-around;
+}
+
+/************* /НАПИСАТЬ ОТЗЫВ ************/
+
+/************* КАРТА *************/
+#map {
+	margin-top: 30px;
+}
+/************* /КАРТА ************/
+
+/************* ПОДВАЛ *************/
+footer {
+	background: var(--blue);
+	color: #fff;
+	padding: 30px;
+	text-align: center;
+	margin-top: -5px;
+	width: 100%;
+	font-size: 20px;
+}
+/************* /ПОДВАЛ ************/
