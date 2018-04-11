@@ -12,9 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/login', 'Auth\LoginController@login')->middleware('AdminLogin');
+
+Route::prefix('admin')->middleware('AdminPanel')->group(function() {
+    Route::get('/', 'AdminController@index')->name('admin');
+});
+
+Route::get('/logout', function() {
+    Request::session()->forget('admin');
+
+    return redirect()->route('home');
+});
