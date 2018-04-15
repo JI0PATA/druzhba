@@ -2,27 +2,56 @@
 
 namespace App\Http\Controllers;
 
+use App\Achievement;
+use App\Album;
+use App\Mentor;
+use App\News;
+use App\Photo;
+use App\Review;
+use App\Slide;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function index() {
+        $achievements = Achievement::orderBy('id', 'DESC')->limit('4')->get();
+        $mentors = Mentor::orderBy('id', 'DESC')->limit('4')->get();
+        $news = News::orderBy('id', 'DESC')->limit('2')->get();
+        $reviews = Review::where('active', '1')->orderBy('id', 'DESC')->get();
+        $albums = Album::orderBy('id', 'DESC')->limit('4')->get();
+
+
+        return view('index', [
+            'achievements' => $achievements,
+            'mentors' => $mentors,
+            'news' => $news,
+            'reviews' => $reviews,
+            'albums' => $albums,
+        ]);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function callback(Request $request)
     {
-        return view('home');
+        $callback = new Review;
+
+        $callback->name = $request->name;
+        $callback->type = $request->type;
+        $callback->comment = $request->comment;
+
+        $callback->save();
+
+        return back();
+    }
+
+    public function getAlbum($id)
+    {
+        $photos = Photo::where('album_id', $id)->get();
+        $album = Album::find($id);
+
+        return view('album', [
+            'photos' => $photos,
+            'album' => $album,
+        ]);
     }
 }

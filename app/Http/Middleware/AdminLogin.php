@@ -15,6 +15,7 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
+
         if ($request->login === 'admin' && $request->password = 'admin') {
             $request->session()->put('admin', '1');
             return redirect()->route('admin');

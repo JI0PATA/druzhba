@@ -2,9 +2,12 @@
 	width: 800px;
 }
 
+body {
+	background-color: transparent !important;
+}
+
 .slides__item {
 	position: relative;
-	margin-bottom: 40px;
 }
 
 .slides__item:before {
@@ -30,4 +33,32 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+}
+
+input, textarea {
+	width: 100%;
+	margin: 10px 0 !important;
+}
+
+textarea, .cke_contents {
+	min-height: 400px;
+}
+
+.list__items_hor {
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.list__items_hor .list__item {
+	width: 22%;
+	margin-bottom: 30px;
+}
+
+.small-img {
+	text-align: center;
+}
+
+.small-img img {
+	width: 150px;
 }

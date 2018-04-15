@@ -3,98 +3,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <header id="header">
-        <div id="hat" class="wp header__item">
-            <div id="hat__items" class="wp">
-                <div class="hat__item">
-                    <img src="{{ asset('img/rf.jpg') }}" alt="">
-                    <img src="{{ asset('img/tat.jpg') }}" alt="">
-                    <img src="{{ asset('img/laishevo.gif') }}" alt="">
-                </div>
-                <div class="hat__item">
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/phone.png') }}" alt="" class="hat__sub-item_img">
-                        <span class="hat__sub-item_title">8 (800) 555 35 35</span>
-                    </div>
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/location.png') }}" alt="" class="hat__sub-item_img">
-                        <span class="hat__sub-item_title">с. Песчаные Ковали, Олимпийская 13, Казань</span>
-                    </div>
-                </div>
-                <div class="hat__item">
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/mail.png') }}" alt="" class="hat__sub-item_img">
-                        <span class="hat__sub-item_title">dosug@mail.ru</span>
-                    </div>
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/clock.png') }}" alt="" class="hat__sub-item_img">
-                        <span class="hat__sub-item_title">пн-вс с 08:00 до 21:00</span>
-                    </div>
-                </div>
-                <div class="hat__item">
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/vk.png') }}" alt="" class="hat__sub-item_img">
-                        <a href="https://vk.com/club124311104" class="hat__sub-item_title" target="_blank">vk.com/club124311104</a>
-                    </div>
-                    <div class="hat__sub-item">
-                        <img src="{{ asset('img/instagram.png') }}" alt="" class="hat__sub-item_img">
-                        <a href="https://instagram.com/drughba_kovali" class="hat__sub-item_title" target="_blank">instagram.com/drughba_kovali</a>
-                    </div>
-                </div>
-            </div>
-            <div class="full-line header__item"></div>
-        </div>
-        <div id="slider">
-            <div class="slider__item" style="background-image: url({{ asset('img/slider/slider1.jpg') }})">
-                <div class="hat__main-title wp">
-                    <h1 class="hat__main-title_title">
-                        спортивно-досуговый центр "дружба"
-                    </h1>
-                    <div class="hat__main-title_description">
-                        Спортивно-досуговый центр "Дружба" - планета, где у самых маленьких исполняются мечты и
-                        материализуются
-                        глобальные планы.<br>
-                        Основная деятельность спортивно-досугового центра - это организация досуга жителей села Песчаные
-                        Ковали.
-                        В спортивно-досуговый центр малышей с легкостью научат разговаривать, дружить, а также раскроют
-                        потенциал ребенка. В данной организации работают разные секции, не только спортивные, но и
-                        культурно-массовые.
-                    </div>
-                </div>
-            </div>
-
-            <div class="slider__item" style="background-image: url({{ asset('img/slider/slider1.jpg') }})">
-                <div class="hat__main-title wp">
-                    <h1 class="hat__main-title_title">
-                        спортивно-досуговый центр "дружба"
-                    </h1>
-                    <div class="hat__main-title_description">
-                        Спортивно-досуговый центр "Дружба" - планета, где у самых маленьких исполняются мечты и
-                        материализуются
-                        глобальные планы.<br>
-                        Основная деятельность спортивно-досугового центра - это организация досуга жителей села Песчаные
-                        Ковали.
-                        В спортивно-досуговый центр малышей с легкостью научат разговаривать, дружить, а также раскроют
-                        потенциал ребенка. В данной организации работают разные секции, не только спортивные, но и
-                        культурно-массовые.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div id="menu">
-        <menu class="wp">
-            <a href="{{ route('home') }}" class="menu__item">Главная</a>
-            <a href="#" class="menu__item">Достижения</a>
-            <a href="#" class="menu__item">Тренера</a>
-            <a href="#" class="menu__item">Новости</a>
-            <a href="#" class="menu__item">Галерея</a>
-            <a href="#" class="menu__item">Отзывы и Предложения</a>
-            <a href="#" class="menu__item">Расписание</a>
-        </menu>
-    </div>
-
     <section id="achievements" class="line-bottom">
         <div class="wp">
             <div class="hor-center">
@@ -102,42 +10,18 @@
             </div>
 
             <div class="list__items_hor">
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup1.jpg') }})"></div>
-                    <div class="list__item-title">
-                        coupe uefa
+                @foreach($achievements as $achievement)
+                    <div class="list__item">
+                        <div class="list__item-img"
+                             style="background-image: url({{ asset('img/cup/'.$achievement['img']) }})"></div>
+                        <div class="list__item-title">
+                            {{ $achievement['name'] }}
+                        </div>
+                        <div class="list__item-description">
+                            {{ $achievement['year'] }}
+                        </div>
                     </div>
-                    <div class="list__item-description">
-                        Футбол: сезон 2014/16
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup2.jpg') }})"></div>
-                    <div class="list__item-title">
-                        coupe uefa
-                    </div>
-                    <div class="list__item-description">
-                        Футбол: сезон 2014/16
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup3.jpg') }})"></div>
-                    <div class="list__item-title">
-                        coupe uefa
-                    </div>
-                    <div class="list__item-description">
-                        Футбол: сезон 2014/16
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup4.jpg') }})"></div>
-                    <div class="list__item-title">
-                        coupe uefa
-                    </div>
-                    <div class="list__item-description">
-                        Футбол: сезон 2014/16
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="hor-right">
                 <a href="" class="more">подробнее...</a>
@@ -152,30 +36,15 @@
             </div>
 
             <div class="list__items_hor">
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup1.jpg') }})"></div>
-                    <div class="list__item-name">
-                        Костаков Евгений Николаевич
+                @foreach($mentors as $mentor)
+                    <div class="list__item">
+                        <div class="list__item-img"
+                             style="background-image: url({{ asset('img/mentors/'.$mentor['img']) }})"></div>
+                        <div class="list__item-name">
+                            {{ $mentor['name'] }}
+                        </div>
                     </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup2.jpg') }})"></div>
-                    <div class="list__item-name">
-                        Костаков Евгений Николаевич
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup3.jpg') }})"></div>
-                    <div class="list__item-name">
-                        Костаков Евгений Николаевич
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup4.jpg') }})"></div>
-                    <div class="list__item-name">
-                        Костаков Евгений Николаевич
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="hor-right">
@@ -191,74 +60,23 @@
             </div>
 
             <div class="list__items_text">
-                <div class="list__item_text">
-                    <div class="list__item_text_img"
-                         style="background-image: url({{ asset('img/news/news1.jpg') }})"></div>
-                    <div class="list__item_text_description">
-                        <div class="list__item_text-title">
-                            Проводили масленницу!
-                        </div>
-                        <div class="list__item_text-date">
-                            Дата публикации: 10.03.2018
-                        </div>
-                        <div class="list__item_test-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
+                @foreach($news as $item)
+                    <div class="list__item_text">
+                        <div class="list__item_text_img"
+                             style="background-image: url({{ asset('img/news/'.$item['img']) }})"></div>
+                        <div class="list__item_text_description">
+                            <div class="list__item_text-title">
+                                {{ $item['title'] }}
+                            </div>
+                            <div class="list__item_text-date">
+                                Дата публикации: {{ $item['created_at']->format('d.m.Y') }}
+                            </div>
+                            <div class="list__item_test-description">
+                                {!! $item['description'] !!}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="list__item_text">
-                    <div class="list__item_text_img"
-                         style="background-image: url({{ asset('img/news/news1.jpg') }})"></div>
-                    <div class="list__item_text_description">
-                        <div class="list__item_text-title">
-                            Проводили масленницу!
-                        </div>
-                        <div class="list__item_text-date">
-                            Дата публикации: 10.03.2018
-                        </div>
-                        <div class="list__item_test-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="hor-right">
@@ -274,30 +92,14 @@
             </div>
 
             <div class="list__items_hor min-height-auto">
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup1.jpg') }})"></div>
+                @foreach($albums as $album)
+                <a href="{{ route('album', ['id' => $album['id']]) }}" class="list__item">
+                    <div class="list__item-img" style="background-image: url({{ asset('img/albums/'.$album['img']) }})"></div>
                     <div class="list__item_title-hidden">
-                        <span>Костаков Евгений Николаевич</span>
+                        <span>{{ $album['title'] }}</span>
                     </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup2.jpg') }})"></div>
-                    <div class="list__item_title-hidden">
-                        <span>Костаков Евгений Николаевич</span>
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup3.jpg') }})"></div>
-                    <div class="list__item_title-hidden">
-                        <span>Костаков Евгений Николаевич</span>
-                    </div>
-                </div>
-                <div class="list__item">
-                    <div class="list__item-img" style="background-image: url({{ asset('img/cup/cup4.jpg') }})"></div>
-                    <div class="list__item_title-hidden">
-                        <span>Костаков Евгений Николаевич</span>
-                    </div>
-                </div>
+                </a>
+                @endforeach
             </div>
 
             <div class="hor-right">
@@ -306,7 +108,6 @@
         </div>
     </section>
 
-
     <section id="reviews" class="line-bottom">
         <div class="wp">
             <div class="hor-center">
@@ -314,74 +115,23 @@
             </div>
 
             <div class="list__items_text">
-                <div class="list__item_text">
-                    <div class="list__item_text_description">
-                        <div class="list__item_text_user">
-                            <div class="list__item_text-title">
-                                Проводили масленницу!
+                @foreach($reviews as $review)
+                    <div class="list__item_text">
+                        <div class="list__item_text_description">
+                            <div class="list__item_text_user">
+                                <div class="list__item_text-title">
+                                    {{ $review['name'] }}
+                                </div>
+                                <div class="list__item_text-date">
+                                    Отправлено: {{ $review['created_at']->format('d.m.Y H:i') }}
+                                </div>
                             </div>
-                            <div class="list__item_text-date">
-                                Отправлено: 10.03.2018
+                            <div class="list__item_test-description">
+                                {{ $review['comment'] }}
                             </div>
-                        </div>
-                        <div class="list__item_test-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
                         </div>
                     </div>
-                </div>
-                <div class="list__item_text">
-                    <div class="list__item_text_description">
-                        <div class="list__item_text_user">
-                            <div class="list__item_text-title">
-                                Проводили масленницу!
-                            </div>
-                            <div class="list__item_text-date">
-                                Отправлено: 10.03.2018
-                            </div>
-                        </div>
-                        <div class="list__item_test-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur, aut blanditiis
-                            eaque
-                            eos fugiat nisi nobis numquam odio quam quas sed sit vitae! Beatae debitis ex quisquam quos
-                            tempora.
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <div class="hor-right">
@@ -397,26 +147,28 @@
             </div>
 
             <div class="callback__forms">
-                <form action="" class="form">
+                <form action="{{ route('callback') }}" class="form" method="POST">
+                    {{ csrf_field() }}
                     <div class="form__title">Форма</div>
-                    <input type="text" class="form__field form__input" placeholder="Введите ваше имя" required>
-                    <select type="text" class="form__field form__input" required>
-                        <option value="0">Отзыв</option>
-                        <option value="1">Предложение</option>
+                    <input type="text" class="form__field form__input" placeholder="Введите ваше имя" required
+                           name="name">
+                    <select type="text" class="form__field form__input" required name="type">
+                        <option value="Отзыв">Отзыв</option>
+                        <option value="Предложение">Предложение</option>
                     </select>
-                    <textarea name="" class="form__field form__input form__textarea"
+                    <textarea name="comment" class="form__field form__input form__textarea"
                               placeholder="Введите ваш текст" required></textarea>
                     <button class="form__field form__btn btn">Отправить</button>
                 </form>
 
-                <form action="" class="form">
+                <div action="" class="form">
                     <div class="form__title">Пример</div>
                     <input type="text" class="form__field form__input" value="Эдик" disabled>
                     <input type="text" class="form__field form__input" value="Отзыв" disabled>
                     <textarea name="" class="form__field form__input form__textarea" disabled>Очень нравятся ваши мероприятия. Хотелось бы побольше развлечения такого рода. Спасибо за эмоции!
                 </textarea>
                     <button type="button" class="form__field form__btn btn">Отправить</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>

@@ -1,0 +1,40 @@
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+	.wp {
+		width: 100%;
+	}
+
+	#hat {
+		margin-bottom: 15px;
+	}
+
+	#hat__items {
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	.hat__item:nth-child(3), .hat__item:nth-child(4) {
+		margin-top: 15px;
+	}
+
+	.hat__main-title_description {
+		padding: 0 15px;
+	}
+
+	.list__items_hor, .list__items_text {
+		flex-wrap: wrap;
+		padding: 0 20px;
+	}
+
+	.list__item {
+		width: 45%;
+		margin-bottom: 30px;
+	}
+
+	.callback__forms {
+		flex-wrap: wrap;
+	}
+
+	.form {
+		margin-bottom: 30px;
+	}
+}

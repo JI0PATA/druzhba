@@ -16,6 +16,8 @@
 
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 
+    <script src="{{ asset('components/ckeditor/ckeditor.js') }}"></script>
+
 </head>
 <body>
 
@@ -41,9 +43,14 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
 
                     @if(\Request::session()->has('admin'))
+                        <li><a class="nav-link" href="{{ route('admin') }}">{{ __('Главная') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('achievements') }}">{{ __('Достижения') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('mentors') }}">{{ __('Тренера') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('news') }}">{{ __('Новости') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('reviews') }}">{{ __('Отзывы') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('albums') }}">{{ __('Альбомы') }}</a></li>
                         <li><a class="nav-link" href="{{ route('logout') }}">{{ __('Выйти') }}</a></li>
                     @endif
                 </ul>
@@ -55,6 +62,12 @@
 <main class="py-4">
     @yield('content')
 </main>
+
+<script>
+    $(document).ready(_ => {
+        CKEDITOR.replace('textarea');
+    });
+</script>
 
 </body>
 </html>
