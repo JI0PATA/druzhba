@@ -1,14 +1,16 @@
-@extends('layouts.admin')
+{{ config(['app.title' => 'Достижения']) }}
+
+@extends('layouts.app')
 
 @section('content')
-    <div class="wp">
-        <a href="{{ route('addNews') }}">Добавить новость</a>
+    <div class="wp"><br>
+        <h2>Новости</h2>
     </div>
+
     <div class="list__items_text wp" id="news">
         @foreach($news as $item)
             <div class="list__item_text">
-                <div class="list__item_text_img"
-                     style="background-image: url({{ asset('img/news/'.$item['img']) }})"></div>
+                <a href="{{ asset('img/news/'.$item['img']) }}" data-lightbox="news" style="background-image: url({{ asset('img/news/'.$item['img']) }})" class="list__item_text_img"></a>
                 <div class="list__item_text_description">
                     <div class="list__item_text-title">
                         {{ $item['title'] }}
@@ -20,8 +22,7 @@
                         {!! $item['description'] !!}
                     </div>
                     <div>
-                        <a href="{{ route('editNews', ['id' => $item['id']]) }}">Изменить</a><br>
-                        <a href="{{ route('deleteNews', ['id' => $item['id']]) }}">Удалить</a><br><br>
+                        <a href="{{ route('news.page', ['id' => $item['id']]) }}" class="read">Читать..</a>
                     </div>
                 </div>
             </div>

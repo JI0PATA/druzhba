@@ -13,6 +13,6 @@
             <input type="text" name="title" placeholder="Название альбома" value="{{ $album['title'] }}">
         </div>
         <button>Сохранить</button>
-        <a href="{{ route('deleteAchievement', ['id' => $album['id']]) }}">Удалить</a>
+        <a href="{{ route('deleteAlbum', ['id' => $album['id']]) }}">Удалить</a>
     </form>
 @endsection

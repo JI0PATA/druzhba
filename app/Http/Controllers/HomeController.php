@@ -18,7 +18,7 @@ class HomeController extends Controller
         $achievements = Achievement::orderBy('id', 'DESC')->limit('4')->get();
         $mentors = Mentor::orderBy('id', 'DESC')->limit('4')->get();
         $news = News::orderBy('id', 'DESC')->limit('2')->get();
-        $reviews = Review::where('active', '1')->orderBy('id', 'DESC')->get();
+        $reviews = Review::where('active', '1')->orderBy('id', 'DESC')->limit('2')->get();
         $albums = Album::orderBy('id', 'DESC')->limit('4')->get();
 
 
@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function getAlbum($id)
     {
-        $photos = Photo::where('album_id', $id)->get();
+        $photos = Photo::where('album_id', $id)->orderBy('id', 'DESC')->get();
         $album = Album::find($id);
 
         return view('album', [

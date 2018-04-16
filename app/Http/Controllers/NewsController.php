@@ -73,4 +73,22 @@ class NewsController extends Controller
         $news->delete();
         return redirect()->route('news');
     }
+
+    public function getNews($id)
+    {
+        $news = News::find($id);
+
+        return view('modules.news.view', [
+            'news' => $news
+        ]);
+    }
+
+    public function getAllNews()
+    {
+        $news = News::orderBy('id', 'DESC')->get();
+
+        return view('news', [
+            'news' => $news
+        ]);
+    }
 }

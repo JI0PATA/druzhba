@@ -10,7 +10,7 @@ class MentorController extends Controller
 {
     public function index()
     {
-        $mentors = Mentor::orderBy('id', 'DESC')->limit('4')->get();
+        $mentors = Mentor::orderBy('id', 'DESC')->get();
 
         return view('admin.mentors', [
             'mentors' => $mentors
@@ -74,5 +74,23 @@ class MentorController extends Controller
         $mentor = Mentor::find($id);
         $mentor->delete();
         return redirect()->route('mentors');
+    }
+
+    public function getMentor($id)
+    {
+        $mentor = Mentor::find($id);
+
+        return view('modules.mentors.view', [
+            'mentor' => $mentor
+        ]);
+    }
+
+    public function getMentors()
+    {
+        $mentors = Mentor::orderBy('id', 'DESC')->get();
+
+        return view('mentors', [
+            'mentors' => $mentors
+        ]);
     }
 }

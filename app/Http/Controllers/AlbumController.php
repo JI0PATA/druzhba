@@ -28,7 +28,7 @@ class AlbumController extends Controller
 
         if ($request->file->getClientMimeType() === 'image/png' || $request->file->getClientMimeType() === 'image/jpeg') {
             $request->file->move(public_path('img/albums'), $request->file->getClientOriginalName());
-            $album->img = $request->file->getClientOriginalName();
+            $album->img = urlencode($request->file->getClientOriginalName());
         } else return back();
 
         $album->title = $request->title;
@@ -69,5 +69,14 @@ class AlbumController extends Controller
         $album->delete();
 
         return redirect()->route('albums');
+    }
+
+    public function getAlbums()
+    {
+        $albums = Album::orderBy('id', 'DESC')->get();
+
+        return view('albums', [
+            'albums' => $albums
+        ]);
     }
 }

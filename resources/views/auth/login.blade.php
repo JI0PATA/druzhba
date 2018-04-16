@@ -11,6 +11,11 @@
                     <div class="card-header">{{ __('Авторизация') }}</div>
 
                     <div class="card-body">
+                        <div class="cm-error">
+                            @if(\session()->has('popup_msg'))
+                                {{ session()->pull('popup_msg') }}
+                            @endif
+                        </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
@@ -20,14 +25,8 @@
 
                                 <div class="col-md-6">
                                     <input id="login" type="text"
-                                           class="form-control{{ $errors->has('login') ? ' is-invalid' : '' }}"
-                                           name="login" value="{{ old('login') }}" required autofocus>
-
-                                    @if ($errors->has('login'))
-                                        <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('login') }}</strong>
-                                    </span>
-                                    @endif
+                                           class="form-control"
+                                           name="login" required autofocus>
                                 </div>
                             </div>
 
@@ -37,14 +36,8 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                           class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                           class="form-control"
                                            name="password" required>
-
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
                                 </div>
                             </div>
 

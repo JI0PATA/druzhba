@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('components/slick/slick-theme.css') }}">
     <script src="{{ asset('components/slick/slick.min.js') }}"></script>
 
+    <link rel="stylesheet" href="{{ asset('components/lightbox/css/lightbox.css') }}">
+    <script src="{{ asset('components/lightbox/js/lightbox.js') }}"></script>
+
 </head>
 <body>
 
@@ -82,13 +85,14 @@
 <div id="menu">
     <menu class="wp">
         <a href="{{ route('home') }}" class="menu__item">Главная</a>
-        <a href="#achievements" class="menu__item">Достижения</a>
-        <a href="#mentors" class="menu__item">Тренера</a>
-        <a href="#news" class="menu__item">Новости</a>
-        <a href="#gallery" class="menu__item">Галерея</a>
-        <a href="#reviews" class="menu__item">Отзывы и Предложения</a>
-        <a href="#" class="menu__item">Расписание</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#achievements" class="menu__item">Достижения</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#mentors" class="menu__item">Тренера</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#news" class="menu__item">Новости</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#gallery" class="menu__item">Галерея</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#reviews" class="menu__item">Отзывы и Предложения</a>
+        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#" class="menu__item">Расписание</a>
     </menu>
+
 </div>
 
 @yield('content')

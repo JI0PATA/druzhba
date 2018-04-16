@@ -11,7 +11,7 @@
 
             <div class="list__items_hor">
                 @foreach($achievements as $achievement)
-                    <div class="list__item">
+                    <a href="{{ route('achievement.page', ['id' => $achievement['id']]) }}" class="list__item">
                         <div class="list__item-img"
                              style="background-image: url({{ asset('img/cup/'.$achievement['img']) }})"></div>
                         <div class="list__item-title">
@@ -20,11 +20,11 @@
                         <div class="list__item-description">
                             {{ $achievement['year'] }}
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
             <div class="hor-right">
-                <a href="" class="more">подробнее...</a>
+                <a href="{{ route('user.achievements') }}" class="more btn">подробнее...</a>
             </div>
         </div>
     </section>
@@ -37,18 +37,18 @@
 
             <div class="list__items_hor">
                 @foreach($mentors as $mentor)
-                    <div class="list__item">
+                    <a href="{{ route('mentor.page', ['id' => $mentor['id']]) }}" class="list__item">
                         <div class="list__item-img"
                              style="background-image: url({{ asset('img/mentors/'.$mentor['img']) }})"></div>
                         <div class="list__item-name">
                             {{ $mentor['name'] }}
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
 
             <div class="hor-right">
-                <a href="" class="more">подробнее...</a>
+                <a href="{{ route('user.mentors') }}" class="more btn">подробнее...</a>
             </div>
         </div>
     </section>
@@ -62,8 +62,7 @@
             <div class="list__items_text">
                 @foreach($news as $item)
                     <div class="list__item_text">
-                        <div class="list__item_text_img"
-                             style="background-image: url({{ asset('img/news/'.$item['img']) }})"></div>
+                        <a href="{{ asset('img/news/'.$item['img']) }}" data-lightbox="news" style="background-image: url({{ asset('img/news/'.$item['img']) }})" class="list__item_text_img"></a>
                         <div class="list__item_text_description">
                             <div class="list__item_text-title">
                                 {{ $item['title'] }}
@@ -71,8 +70,11 @@
                             <div class="list__item_text-date">
                                 Дата публикации: {{ $item['created_at']->format('d.m.Y') }}
                             </div>
-                            <div class="list__item_test-description">
+                            <div class="list__item_text-description">
                                 {!! $item['description'] !!}
+                            </div>
+                            <div>
+                                <a href="{{ route('news.page', ['id' => $item['id']]) }}" class="read">Читать..</a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +82,7 @@
             </div>
 
             <div class="hor-right">
-                <a href="" class="more">подробнее...</a>
+                <a href="{{ route('user.news') }}" class="more btn">подробнее...</a>
             </div>
         </div>
     </section>
@@ -103,7 +105,7 @@
             </div>
 
             <div class="hor-right">
-                <a href="" class="more">подробнее...</a>
+                <a href="{{ route('user.albums') }}" class="more btn">подробнее...</a>
             </div>
         </div>
     </section>
@@ -126,7 +128,7 @@
                                     Отправлено: {{ $review['created_at']->format('d.m.Y H:i') }}
                                 </div>
                             </div>
-                            <div class="list__item_test-description">
+                            <div class="list__item_text-description">
                                 {{ $review['comment'] }}
                             </div>
                         </div>
@@ -135,7 +137,7 @@
             </div>
 
             <div class="hor-right">
-                <a href="" class="more">подробнее...</a>
+                <a href="{{ route('user.reviews') }}" class="more btn">подробнее...</a>
             </div>
         </div>
     </section>
@@ -179,3 +181,4 @@
     </div>
 
 @endsection
+

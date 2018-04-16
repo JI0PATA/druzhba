@@ -75,4 +75,22 @@ class AchievementController extends Controller
 
         return back();
     }
+
+    public function getAchievement($id)
+    {
+        $achievement = Achievement::find($id);
+
+        return view('modules.achievements.view', [
+            'achievement' => $achievement
+        ]);
+    }
+
+    public function getAchievements()
+    {
+        $achievements = Achievement::orderBy('id', 'DESC')->get();
+
+        return view('achievements', [
+            'achievements' => $achievements
+        ]);
+    }
 }

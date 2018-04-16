@@ -99,6 +99,16 @@ Route::post('callback', 'HomeController@callback')->name('callback');
 
 Route::get('album/{id}', 'HomeController@getAlbum')->name('album');
 
+Route::get('achievement/{id}', 'AchievementController@getAchievement')->name('achievement.page');
+Route::get('mentor/{id}', 'MentorController@getMentor')->name('mentor.page');
+Route::get('news/{id}', 'NewsController@getNews')->name('news.page');
+
+Route::get('achievements', 'AchievementController@getAchievements')->name('user.achievements');
+Route::get('mentors', 'MentorController@getMentors')->name('user.mentors');
+Route::get('news', 'NewsController@getAllNews')->name('user.news');
+Route::get('albums', 'AlbumController@getAlbums')->name('user.albums');
+Route::get('reviews', 'ReviewController@getReviews')->name('user.reviews');
+
 Route::get('/logout', function () {
     Request::session()->forget('admin');
 

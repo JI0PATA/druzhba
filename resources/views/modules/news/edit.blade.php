@@ -19,6 +19,6 @@
             </textarea>
 
             <button>Сохранить</button>
-        <a href="{{ route('deleteMentor', ['id' => $news['id']]) }}">Удалить</a>
+        <a href="{{ route('deleteNews', ['id' => $news['id']]) }}">Удалить</a>
     </form>
 @endsection

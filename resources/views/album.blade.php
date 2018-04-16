@@ -8,10 +8,10 @@
     </div>
     <div class="list__items_hor min-height-auto wp">
         @foreach($photos as $photo)
-            <div class="list__item">
+            <a href="{{ asset('img/albums/photos/'.$photo['img']) }}" class="list__item" data-lightbox="album">
                 <div class="list__item-img"
                      style="background-image: url({{ asset('img/albums/photos/'.$photo['img']) }})"></div>
-            </div>
+            </a>
         @endforeach
     </div>
 @endsection

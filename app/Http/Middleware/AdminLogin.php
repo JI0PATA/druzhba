@@ -19,7 +19,10 @@ class AdminLogin
         if ($request->login === 'admin' && $request->password === 'admin') {
             $request->session()->put('admin', '1');
             return redirect()->route('admin');
-        } else return redirect()->route('login');
+        } else {
+            $request->session()->flash('popup_msg', 'Данные введены неверно!');
+            return redirect()->route('login');
+        }
 
     }
 }
