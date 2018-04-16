@@ -1,4 +1,4 @@
-{{ config(['app.title' => 'Достижения']) }}
+{{ config(['app.title' => 'Отзывы']) }}
 
 @extends('layouts.app')
 
