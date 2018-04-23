@@ -11,7 +11,7 @@
                 </div>
             </div>
             <a href="{{ route('editSlide', ['id' => $slide['id']]) }}">Изменить</a><br>
-            <a href="{{ route('deleteSlide', ['id' => $slide['id']]) }}">Удалить</a><br><br>
+            <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteSlide', ['id' => $slide['id']]) }}'" href="#">Удалить</a><br><br>
         @endforeach
     </div>
 @endsection

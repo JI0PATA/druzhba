@@ -15,7 +15,7 @@
                 <div class="list__item-img"
                      style="background-image: url({{ asset('img/albums/photos/'.$photo['img']) }})"></div>
                 <div class="list__item_title">
-                    <a href="{{ route('deletePhotoInAlbum', ['id' => $photo['id']]) }}">Удалить</a><br><br>
+                    <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deletePhotoInAlbum', ['id' => $photo['id']]) }}'" href="#">Удалить</a>
                 </div>
             </div>
         @endforeach

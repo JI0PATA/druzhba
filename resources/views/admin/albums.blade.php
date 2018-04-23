@@ -12,7 +12,7 @@
                     <span>{{ $album['title'] }}</span><br>
                     <a href="{{ route('photosInAlbum', ['id' => $album['id']]) }}">Обзор</a><br>
                     <a href="{{ route('editAlbum', ['id' => $album['id']]) }}">Изменить</a><br>
-                    <a href="{{ route('deleteAlbum', ['id' => $album['id']]) }}">Удалить</a><br><br>
+                    <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteAlbum', ['id' => $album['id']]) }}'" href="#">Удалить</a><br><br>
                 </div>
             </div>
         @endforeach

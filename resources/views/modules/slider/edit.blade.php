@@ -18,6 +18,6 @@
         </textarea>
         </div>
         <button>Сохранить</button>
-        <a href="{{ route('deleteSlide', ['id' => $slide['id']]) }}">Удалить</a>
+        <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteSlide', ['id' => $slide['id']]) }}'" href="#">Удалить</a>
     </form>
 @endsection

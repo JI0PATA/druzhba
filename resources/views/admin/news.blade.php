@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <a href="{{ route('editNews', ['id' => $item['id']]) }}">Изменить</a><br>
-                        <a href="{{ route('deleteNews', ['id' => $item['id']]) }}">Удалить</a><br><br>
+                        <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteNews', ['id' => $item['id']]) }}'" href="#">Удалить</a><br><br>
                     </div>
                 </div>
             </div>

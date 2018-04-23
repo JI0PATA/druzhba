@@ -20,6 +20,6 @@
             <input type="text" name="years" value="{{ $mentor['years'] }}">
         </div>
         <button>Сохранить</button>
-        <a href="{{ route('deleteMentor', ['id' => $mentor['id']]) }}">Удалить</a>
+        <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteMentor', ['id' => $mentor['id']]) }}'" href="#">Удалить</a>
     </form>
 @endsection

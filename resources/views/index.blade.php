@@ -41,7 +41,9 @@
                         <div class="list__item-img"
                              style="background-image: url({{ asset('img/mentors/'.$mentor['img']) }})"></div>
                         <div class="list__item-name">
-                            {{ $mentor['name'] }}
+                            {{ $mentor['name'] }}<br>
+                            {{ $mentor['section'] }}<br>
+                            {{ $mentor['years'] }}
                         </div>
                     </a>
                 @endforeach
@@ -90,7 +92,7 @@
     <section id="gallery" class="line-bottom">
         <div class="wp">
             <div class="hor-center">
-                <h2 class="title underline">наши галерея</h2>
+                <h2 class="title underline">галерея</h2>
             </div>
 
             <div class="list__items_hor min-height-auto">

@@ -16,7 +16,7 @@
                     {{ $achievement['year'] }}
                 </div>
                 <a href="{{ route('editAchievement', ['id' => $achievement['id']]) }}">Изменить</a><br>
-                <a href="{{ route('deleteAchievement', ['id' => $achievement['id']]) }}">Удалить</a><br><br>
+                <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteAchievement', ['id' => $achievement['id']]) }}'" href="#">Удалить</a><br><br>
             </div>
         @endforeach
     </div>

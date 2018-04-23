@@ -13,7 +13,7 @@
             <input type="text" name="year" required placeholder="Года">
         </div>
         <div>
-            <textarea name="competitorsYear" id="textarea" required placeholder="Участники"></textarea>
+            <textarea name="competitorsYear" id="textarea" required placeholder="Информация"></textarea>
         </div>
         <button class="btn">Добавить</button>
     </form>

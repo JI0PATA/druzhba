@@ -21,6 +21,6 @@
         </textarea>
         </div>
         <button>Сохранить</button>
-        <a href="{{ route('deleteAchievement', ['id' => $achievement['id']]) }}">Удалить</a>
+        <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteAchievement', ['id' => $achievement['id']]) }}'" href="#">Удалить</a>
     </form>
 @endsection

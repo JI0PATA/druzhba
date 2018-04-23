@@ -17,7 +17,7 @@
                 Год: {{ $achievement['year'] }}
             </div>
             <div class="page__text">
-                Участники: {!! $achievement['competitorsYear'] !!}
+                Информация: {!! $achievement['competitorsYear'] !!}
             </div>
         </div>
     </section>

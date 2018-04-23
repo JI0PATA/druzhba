@@ -13,6 +13,6 @@
             <input type="text" name="title" placeholder="Название альбома" value="{{ $album['title'] }}">
         </div>
         <button>Сохранить</button>
-        <a href="{{ route('deleteAlbum', ['id' => $album['id']]) }}">Удалить</a>
+        <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteAlbum', ['id' => $album['id']]) }}'" href="#">Удалить</a>
     </form>
 @endsection

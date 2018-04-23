@@ -13,7 +13,7 @@
                     {{ $mentor['name'] }}
                 </div>
                 <a href="{{ route('editMentor', ['id' => $mentor['id']]) }}">Изменить</a><br>
-                <a href="{{ route('deleteMentor', ['id' => $mentor['id']]) }}">Удалить</a><br><br>
+                <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteMentor', ['id' => $mentor['id']]) }}'" href="#">Удалить</a><br><br>
             </div>
         @endforeach
     </div>

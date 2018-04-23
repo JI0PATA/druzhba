@@ -21,7 +21,7 @@
                     @else
                         <a href="{{ route('blockReview', ['id' => $review['id']]) }}">Заблокировать</a><br>
                     @endif
-                    <a href="{{ route('deleteNews', ['id' => $review['id']]) }}">Удалить</a><br><br>
+                    <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteReview', ['id' => $review['id']]) }}'" href="#">Удалить</a><br><br>
                 </div>
             </div>
         @endforeach

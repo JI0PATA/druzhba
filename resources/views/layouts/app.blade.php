@@ -107,14 +107,15 @@
             infinite: true,
             autoplay: true,
             autoplaySpeed: 3000,
-            dots: true
+            dots: true,
+            accessibility: false,
         });
 
         $("a[href^='#']").on("click", function (event) {
             event.preventDefault();
             let id  = $(this).attr('href'),
                 top = $(id).offset().top;
-            $('body,html').animate({scrollTop: top}, 1500);
+            $('body,html').animate({scrollTop: top - 60}, 1500);
         });
     });
 </script>

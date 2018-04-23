@@ -19,6 +19,6 @@
             </textarea>
 
             <button>Сохранить</button>
-        <a href="{{ route('deleteNews', ['id' => $news['id']]) }}">Удалить</a>
+            <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteNews', ['id' => $item['id']]) }}'" href="#">Удалить</a>
     </form>
 @endsection
