@@ -93,6 +93,29 @@ Route::prefix('admin')->middleware('AdminPanel')->group(function () {
        Route::get('delete/{id}', 'PhotoController@delete')->name('deletePhotoInAlbum');
     });
 
+    Route::prefix('schedule')->group(function() {
+
+        Route::prefix('sections')->group(function() {
+            Route::get('/', 'SectionController@index')->name('sections');
+
+            Route::get('add', 'SectionController@add')->name('addSection');
+            Route::post('create', 'SectionController@create')->name('createSection');
+
+            Route::get('edit/{id}', 'SectionController@edit')->name('editSection');
+            Route::post('update/{id}', 'SectionController@update')->name('updateSection');
+
+            Route::get('delete/{id}', 'SectionController@delete')->name('deleteSection');
+        });
+
+        Route::get('/', 'ScheduleController@index')->name('schedule');
+
+        Route::get('add/{day}', 'ScheduleController@add')->name('addSchedule');
+        Route::post('create/{day}', 'ScheduleController@create')->name('createSchedule');
+
+        Route::get('edit/{id}');
+
+    });
+
 });
 
 Route::post('callback', 'HomeController@callback')->name('callback');
@@ -108,6 +131,8 @@ Route::get('mentors', 'MentorController@getMentors')->name('user.mentors');
 Route::get('news', 'NewsController@getAllNews')->name('user.news');
 Route::get('albums', 'AlbumController@getAlbums')->name('user.albums');
 Route::get('reviews', 'ReviewController@getReviews')->name('user.reviews');
+
+//Route::get('');
 
 Route::get('/logout', function () {
     Request::session()->forget('admin');
