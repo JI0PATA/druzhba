@@ -9,14 +9,9 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    public function getSchedules(Request $request = null)
+    public function getSchedules()
     {
-        $schedules = Schedule::with(['mentor', 'section'])->orderBy('time_start');
-
-        if ($request->input('filter') !== null)
-            $schedules = $schedules->where('section_id', $request->input('filter'));
-
-        $schedules = $schedules->get();
+        $schedules = Schedule::with(['mentor', 'section'])->orderBy('time_start')->get();
 
         return $schedules->groupBy('day')->reverse();
     }
@@ -25,8 +20,17 @@ class ScheduleController extends Controller
     {
         $sections = Section::orderBy('name')->get();
 
+        $schedules = Schedule::with(['mentor', 'section'])
+            ->orderBy('time_start');
+        if ($request->input('filter') !== null)
+            $schedules = $schedules->where('section_id', $request->input('filter'));
+
+        $schedules = $schedules->get();
+
+        $schedules = $schedules->groupBy('day')->reverse();
+
         return view('schedules', [
-            'schedules' => $this->getSchedules($request),
+            'schedules' => $schedules,
             'sections' => $sections
         ]);
     }

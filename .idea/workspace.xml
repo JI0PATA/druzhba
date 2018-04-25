@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5afb0fae-7a6c-4727-adbc-ef5f8f657230" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,8 +64,8 @@
           <file leaf-file-name="ScheduleController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+                <state relative-caret-position="450">
+                  <caret line="25" column="84" lean-forward="false" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
                   <folding>
                     <element signature="e#40#55#0#PHP" expanded="true" />
                   </folding>
@@ -518,12 +517,12 @@
       <workItem from="1524217120300" duration="4987000" />
       <workItem from="1524478606325" duration="4528000" />
       <workItem from="1524583130489" duration="13822000" />
-      <workItem from="1524656071996" duration="22000" />
+      <workItem from="1524656071996" duration="800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81104000" />
+    <option name="totallyTimeSpent" value="81882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -975,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+        <state relative-caret-position="450">
+          <caret line="25" column="84" lean-forward="false" selection-start-line="25" selection-start-column="84" selection-end-line="25" selection-end-column="84" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
           </folding>
