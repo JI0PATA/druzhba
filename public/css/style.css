@@ -9,6 +9,10 @@ html {
 	overflow-x: hidden;
 }
 
+body {
+	background-color: transparent;
+}
+
 :root {
 	--blue: #305ccc;
 	--blue-darken: #304c99;
