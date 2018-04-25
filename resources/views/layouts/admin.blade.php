@@ -52,6 +52,7 @@
                         <li><a class="nav-link" href="{{ route('reviews') }}">{{ __('Отзывы') }}</a></li>
                         <li><a class="nav-link" href="{{ route('albums') }}">{{ __('Альбомы') }}</a></li>
                         <li><a class="nav-link" href="{{ route('sections') }}">{{ __('Секции') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('schedules') }}">{{ __('Расписание') }}</a></li>
                         <li><a class="nav-link" href="{{ route('logout') }}">{{ __('Выйти') }}</a></li>
                     @endif
                 </ul>

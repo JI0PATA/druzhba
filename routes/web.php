@@ -107,12 +107,15 @@ Route::prefix('admin')->middleware('AdminPanel')->group(function () {
             Route::get('delete/{id}', 'SectionController@delete')->name('deleteSection');
         });
 
-        Route::get('/', 'ScheduleController@index')->name('schedule');
+        Route::get('/', 'ScheduleController@index')->name('schedules');
 
         Route::get('add/{day}', 'ScheduleController@add')->name('addSchedule');
-        Route::post('create/{day}', 'ScheduleController@create')->name('createSchedule');
+        Route::post('create', 'ScheduleController@create')->name('createSchedule');
 
-        Route::get('edit/{id}');
+        Route::get('edit/{id}', 'ScheduleController@edit')->name('editSchedule');
+        Route::post('update/{id}', 'ScheduleController@update')->name('updateSchedule');
+
+        Route::get('delete/{id}', 'ScheduleController@delete')->name('deleteSchedule');
 
     });
 
@@ -131,8 +134,9 @@ Route::get('mentors', 'MentorController@getMentors')->name('user.mentors');
 Route::get('news', 'NewsController@getAllNews')->name('user.news');
 Route::get('albums', 'AlbumController@getAlbums')->name('user.albums');
 Route::get('reviews', 'ReviewController@getReviews')->name('user.reviews');
+Route::get('schedules', 'ScheduleController@userSchedules')->name('user.schedules');
 
-//Route::get('');
+
 
 Route::get('/logout', function () {
     Request::session()->forget('admin');

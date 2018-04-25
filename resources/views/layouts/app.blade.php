@@ -11,6 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media.css') }}">
 
@@ -90,7 +91,7 @@
         <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#news" class="menu__item">Новости</a>
         <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#gallery" class="menu__item">Галерея</a>
         <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#reviews" class="menu__item">Отзывы и Предложения</a>
-        <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#" class="menu__item">Расписание</a>
+        <a href="{{ route('user.schedules') }}" class="menu__item">Расписание</a>
     </menu>
 
 </div>
