@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    public function getSchedules(Request $request)
+    public function getSchedules(Request $request = null)
     {
         $schedules = Schedule::with(['mentor', 'section'])->orderBy('time_start');
 
