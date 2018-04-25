@@ -546,6 +546,7 @@ footer {
 	min-height: 200px;
 	box-shadow: 4px 5px 10px 4px var(--blue-lighting);
 	margin-top: 50px;
+	background-color: #fff;
 }
 
 .schedules__item_title {
