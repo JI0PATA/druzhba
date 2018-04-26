@@ -6,7 +6,7 @@
     <section class="wp">
         <div class="schedules__sort">
             <p>Для сортировки выберите нужную для Вас секцию:</p>
-            <form action="" style="width: 300px;" method="GET">
+            <form action="" method="GET">
                 <select id="filter" class="form-control" name="filter">
                     <option value="">Отменить фильтр</option>
                     @foreach($sections as $section)

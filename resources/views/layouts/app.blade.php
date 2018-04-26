@@ -27,6 +27,12 @@
 </head>
 <body>
 
+<input type="checkbox" class="hidden" id="menu_mobile">
+<label id="san_menu" for="menu_mobile">
+    <div></div>
+    <div></div>
+    <div></div>
+</label>
 <header id="header">
     <div id="hat" class="wp header__item">
         <div id="hat__items" class="wp">
@@ -94,6 +100,17 @@
         <a href="{{ route('user.schedules') }}" class="menu__item">Расписание</a>
     </menu>
 
+    <menu class="wp mobile">
+        <label for="menu_mobile" class="close">x</label>
+        <a href="{{ route('home') }}" class="menu__item">Главная</a>
+        <a href="{{ route('user.achievements') }}" class="menu__item">Достижения</a></label>
+        <a href="{{ route('user.mentors') }}" class="menu__item">Тренера</a>
+        <a href="{{ route('user.news') }}" class="menu__item">Новости</a>
+        <a href="{{ route('user.albums') }}" class="menu__item">Галерея</a>
+        <a href="{{ route('user.reviews') }}" class="menu__item">Отзывы и Предложения</a>
+        <a href="{{ route('user.schedules') }}" class="menu__item">Расписание</a>
+    </menu>
+
 </div>
 
 @yield('content')
@@ -106,11 +123,14 @@
     $(document).ready(function () {
         $('#slider').slick({
             infinite: true,
-            autoplay: true,
+            // autoplay: true,
             autoplaySpeed: 3000,
             dots: true,
             accessibility: false,
         });
+
+        var stHeight = $('.slick-track').height();
+        $('.slick-slide').css('height',stHeight + 'px' );
 
         $("a[href^='#']").on("click", function (event) {
             event.preventDefault();
