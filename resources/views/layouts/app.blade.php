@@ -123,7 +123,7 @@
     $(document).ready(function () {
         $('#slider').slick({
             infinite: true,
-            // autoplay: true,
+            autoplay: true,
             autoplaySpeed: 3000,
             dots: true,
             accessibility: false,
