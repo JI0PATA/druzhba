@@ -583,6 +583,7 @@ footer {
 	cursor: pointer;
 	width: 30px;
 	z-index: 10;
+	display: none;
 }
 
 #san_menu div {
@@ -591,6 +592,10 @@ footer {
 	background: #fff;
 	border-radius: 5px;
 	margin-bottom: 4px;
+}
+
+menu.mobile {
+	display: none;
 }
 
 /************* /МЕНЮ НА МОБИЛЬНЫЙ ************/
