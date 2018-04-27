@@ -11,6 +11,9 @@
                         </div>
                         <div class="list__item_text-date">
                             Отправлено: {{ $review['created_at']->format('d.m.Y H:i') }}
+                        </div><br>
+                        <div class="list__item_text-date">
+                            {{ $review['type'] }}
                         </div>
                     </div>
                     <div class="list__item_test-description">
