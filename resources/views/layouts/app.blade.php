@@ -90,7 +90,7 @@
 </header>
 
 <div id="menu">
-    <menu class="wp">
+    <menu class="wp sticky">
         <a href="{{ route('home') }}" class="menu__item">Главная</a>
         <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#achievements" class="menu__item">Достижения</a>
         <a href="{{ \Request::route()->getName() !== 'home' ? '/' : '' }}#mentors" class="menu__item">Тренера</a>

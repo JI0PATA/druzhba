@@ -5,12 +5,13 @@
 	font-family: sans-serif;
 }
 
-html, body {
+html {
 	overflow-x: hidden;
 }
 
 body {
 	background-color: transparent;
+	position: relative;
 }
 
 :root {
@@ -23,6 +24,16 @@ body {
 .wp {
 	width: 1200px;
 	margin: 0 auto;
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -o-sticky;
+	position: -ms-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 }
 
 .hidden {
