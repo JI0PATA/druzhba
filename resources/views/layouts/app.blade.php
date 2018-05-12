@@ -44,7 +44,10 @@
             <div class="hat__item">
                 <div class="hat__sub-item">
                     <img src="{{ asset('img/phone.png') }}" alt="" class="hat__sub-item_img">
-                    <span class="hat__sub-item_title">8 (800) 555 35 35</span>
+                    <span class="hat__sub-item_title">
+                        <a href="tel:+78437845651">+7 (843) 784-56-51</a><br>
+                        <a href="tel:+78437845667">+7 (843) 784-56-67</a>
+                    </span>
                 </div>
                 <div class="hat__sub-item">
                     <img src="{{ asset('img/location.png') }}" alt="" class="hat__sub-item_img">
@@ -54,7 +57,7 @@
             <div class="hat__item">
                 <div class="hat__sub-item">
                     <img src="{{ asset('img/mail.png') }}" alt="" class="hat__sub-item_img">
-                    <span class="hat__sub-item_title">dosug@mail.ru</span>
+                    <a href="mailto:vr.malikov@yandex.ru" class="hat__sub-item_title">vr.malikov@yandex.ru</a>
                 </div>
                 <div class="hat__sub-item">
                     <img src="{{ asset('img/clock.png') }}" alt="" class="hat__sub-item_img">
