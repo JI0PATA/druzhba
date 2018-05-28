@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 
 @section('content')
     <form class="slides wp" action="{{ route('updateNews', ['id' => $news['id']]) }}" method="POST"
