@@ -68,6 +68,13 @@
 <script>
     $(document).ready(_ => {
         CKEDITOR.replace('textarea');
+
+        $('form').on('submit', ev => {
+            if (CKEDITOR.instances.textarea.getData().length === 0) {
+                alert('Заполните все поля!');
+                ev.preventDefault();
+            }
+        });
     });
 </script>
 
