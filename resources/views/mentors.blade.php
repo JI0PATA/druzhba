@@ -13,7 +13,9 @@
                 <div class="list__item-img"
                      style="background-image: url({{ asset('img/mentors/'.$mentor['img']) }})"></div>
                 <div class="list__item-name">
-                    {{ $mentor['name'] }}
+                    {{ $mentor['name'] }}<br>
+                    {{ $mentor['section'] }}<br>
+                    {{ $mentor['years'] }}
                 </div>
             </a>
         @endforeach

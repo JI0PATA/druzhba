@@ -11,13 +11,13 @@
             <input type="file" name="file">
         </div>
         <div>
-            <input type="text" name="name" value="{{ $mentor['name'] }}">
+            <input type="text" name="name" value="{{ $mentor['name'] }}" placeholder="ФИО">
         </div>
         <div>
-            <input type="text" name="section" value="{{ $mentor['section'] }}">
+            <input type="text" name="section" value="{{ $mentor['section'] }}" placeholder="Секция">
         </div>
         <div>
-            <input type="text" name="years" value="{{ $mentor['years'] }}">
+            <input type="text" name="years" value="{{ $mentor['years'] }}" placeholder="Номер телефона">
         </div>
         <button>Сохранить</button>
         <a onclick="if(confirm('Вы действительно хотите удалить?')) location.href='{{ route('deleteMentor', ['id' => $mentor['id']]) }}'" href="#">Удалить</a>

@@ -17,7 +17,7 @@
                 Секция: {{ $mentor['section'] }}
             </div>
             <div class="page__text">
-                Года, которые тренирует: {!! $mentor['years'] !!}
+                Номер телефона: {!! $mentor['years'] !!}
             </div>
         </div>
     </section>

@@ -13,7 +13,7 @@
             <input type="text" name="section" required placeholder="Секция">
         </div>
         <div>
-            <input type="text" name="years" required placeholder="Года, которые тренирует">
+            <input type="text" name="years" required placeholder="Номер телефона">
         </div>
         <button class="btn">Добавить</button>
     </form>
