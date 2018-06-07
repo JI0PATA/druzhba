@@ -155,4 +155,8 @@
 		transform: scale(1);
 	}
 
+	menu.mobile {
+		display: initial;
+	}
+
 }
