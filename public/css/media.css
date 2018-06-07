@@ -156,7 +156,7 @@
 	}
 
 	menu.mobile {
-		display: initial;
+		display: flex;
 	}
 
 }
